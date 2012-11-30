@@ -1,11 +1,12 @@
-sanimap
+Sanimap
 =======
 
 Sanitary Risk Map for the Sanitation Hackathon in Latin America.
 
+-----------
 
-Installation
-------------
+# Installation
+
 
 0. Dependencies:
 - python 2.7
@@ -39,9 +40,9 @@ git clone git clone git@github.com:manubellido/sanimap.git
 
 6. Create database tables for Django, deps and apps:
 
-    # Create tables on database
+    create tables on database
     env/bin/python manage.py syncdb
-    # Apply any South migration
+    Apply any South migration
     env/bin/python manage.py migrate
 
 
