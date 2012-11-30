@@ -1,0 +1,43 @@
+# Files that you dont want to push into the repo go in here
+
+# Editor/IDE files
+*.swp
+*.swo
+.emacs-project
+.idea
+n\#.#
+*.html~
+
+# OS specific files
+.DS_Store
+
+*.log
+*.pot
+env
+media/*
+
+*.py[co]
+local_settings.py
+*.py~
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+# Simulation files
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
