@@ -7,18 +7,18 @@
 # Requisitos: 
 # - Archivo se debe convertir a .ods 
 # - Nombre de archivo debe ser "todo.ods"
+# - Instalar el gem roo.
 #
 require 'rubygems'
 require 'roo'
 
 oo = Openoffice.new("todo.ods")
 oo.default_sheet = oo.sheets.first
-4.upto(oo.last_row) do |line|
+4.upto(oo.last_row - 3) do |line|
   codigo = oo.cell(line, 'A').to_s
   codigo = codigo[0..codigo.index('.')-1]
   if codigo.length < 6
-    tmp = "0"
-    codigo = tmp + codigo
+    codigo = "0" + codigo
   end
   cod_dpto = codigo[0, 2]
   cod_prov = codigo[2, 2]
@@ -32,6 +32,6 @@ oo.default_sheet = oo.sheets.first
   riesgo_total = riesgo_cisterna + riesgo_pozo + riesgo_acequia + riesgo_vecino
 
   if codigo
-    puts "#{codigo}, #{cod_dpto}, #{cod_prov}, #{distrito}, #{riesgo_cisterna}, #{riesgo_pozo}, #{riesgo_acequia}, #{riesgo_vecino},#{riesgo_total}"
+    puts "#{codigo}, #{cod_dpto}, #{cod_prov}, #{distrito}, #{riesgo_cisterna}, #{riesgo_pozo}, #{riesgo_acequia}, #{riesgo_vecino}, #{riesgo_total}"
   end
 end
